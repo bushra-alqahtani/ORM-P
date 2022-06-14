@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>list of all movies</h1>
+<div class="container">
+        
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">title</th>
+            <th scope="col">description</th>
+            <th scope="col">relese date</th>
+            <th scope="col">duration</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+        <tr>
+            <th scope="row">{{movie.id}}</th>
+            <td><a href="/info/{{movie.id}}">{{movie.title}}</a></td>
+            <td>{{movie.description}}</td>
+            <td>{{movie.relese_date}}</td>
+            <td>{{movie.duration}}</td>
+        </tr>
+        {% endfor %}
+</div>
+    </tbody>
+</table>
+
+{% endblock %}
